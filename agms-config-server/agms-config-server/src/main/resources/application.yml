@@ -1,0 +1,14 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    compatibility-verifier:
+      enabled: false
+    config:
+      server:
+        git:
+          uri: file:///D:\IJSE GDSE72\AD2 B72\AGMS-System\config-repo
