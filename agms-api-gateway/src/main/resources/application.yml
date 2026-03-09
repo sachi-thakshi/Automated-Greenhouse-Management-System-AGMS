@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: api-gateway
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+>>>>>>> 76a3fd738308ebd1c305b19dbafe1d5193d8ac63
 
   cloud:
     gateway:
@@ -31,6 +35,14 @@ spring:
           uri: lb://CROP-SERVICE
           predicates:
             - Path=/api/crops/**
+<<<<<<< HEAD
+=======
+  config:
+    import: "optional:configserver:http://localhost:8888"
+
+>>>>>>> Stashed changes
+=======
+>>>>>>> 76a3fd738308ebd1c305b19dbafe1d5193d8ac63
 eureka:
   client:
     service-url:
