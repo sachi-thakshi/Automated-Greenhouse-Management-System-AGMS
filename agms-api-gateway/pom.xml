@@ -5,7 +5,11 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
+<<<<<<< HEAD
         <version>3.4.3</version>
+=======
+        <version>4.0.3</version>
+>>>>>>> 76a3fd738308ebd1c305b19dbafe1d5193d8ac63
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>lk.ijse</groupId>
@@ -28,6 +32,7 @@
     </scm>
     <properties>
         <java.version>17</java.version>
+<<<<<<< HEAD
         <spring-cloud.version>2024.0.0</spring-cloud.version>
     </properties>
     <dependencies>
@@ -41,19 +46,49 @@
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
         <dependency>
+=======
+        <spring-cloud.version>2025.1.0</spring-cloud.version>
+    </properties>
+    <dependencies>
+        <dependency>
+>>>>>>> 76a3fd738308ebd1c305b19dbafe1d5193d8ac63
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
+<<<<<<< HEAD
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
+=======
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway-server-webmvc</artifactId>
+>>>>>>> 76a3fd738308ebd1c305b19dbafe1d5193d8ac63
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+<<<<<<< HEAD
     </dependencies>
 
+=======
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+>>>>>>> 76a3fd738308ebd1c305b19dbafe1d5193d8ac63
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -63,10 +98,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+<<<<<<< HEAD
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-gateway</artifactId>
             </dependency>
+=======
+>>>>>>> 76a3fd738308ebd1c305b19dbafe1d5193d8ac63
         </dependencies>
     </dependencyManagement>
 
