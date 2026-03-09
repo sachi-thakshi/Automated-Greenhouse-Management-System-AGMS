@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: zone-service
+          uri: lb://ZONE-SERVICE
+          predicates:
+            - Path=/api/v1/zones/**
+        - id: crop-service
+          uri: lb://CROP-SERVICE
+          predicates:
+            - Path=/api/v1/crops/**
