@@ -4,48 +4,10 @@ server:
 spring:
   application:
     name: api-gateway
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
->>>>>>> 76a3fd738308ebd1c305b19dbafe1d5193d8ac63
-
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-
-        - id: zone-service
-          uri: lb://ZONE-SERVICE
-          predicates:
-            - Path=/api/zones/**
-
-        - id: sensor-service
-          uri: lb://SENSOR-SERVICE
-          predicates:
-            - Path=/api/sensors/**
-
-        - id: automation-service
-          uri: lb://AUTOMATION-SERVICE
-          predicates:
-            - Path=/api/automation/**
-
-        - id: crop-service
-          uri: lb://CROP-SERVICE
-          predicates:
-            - Path=/api/crops/**
-<<<<<<< HEAD
-=======
   config:
     import: "optional:configserver:http://localhost:8888"
 
->>>>>>> Stashed changes
-=======
->>>>>>> 76a3fd738308ebd1c305b19dbafe1d5193d8ac63
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    prefer-ip-address: true
+      defaultZone: http://localhost:8761/eureka/
