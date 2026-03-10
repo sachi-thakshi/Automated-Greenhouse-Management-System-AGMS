@@ -1,14 +1,17 @@
 server:
   port: 8081
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/agms_zone_db
     username: root
-    password: your_mysql_password
+    password: 'Ijse@1234'
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
 eureka:
   client:
     service-url:

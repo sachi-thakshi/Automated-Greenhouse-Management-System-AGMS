@@ -4,11 +4,17 @@ server:
 spring:
   application:
     name: config-server
-
+  profiles:
+    active: native
   cloud:
-    compatibility-verifier:
-      enabled: false
     config:
       server:
-        git:
-          uri: file:///D:\IJSE GDSE72\AD2 B72\AGMS-System\config-repo
+        native:
+          search-locations: "file:/D:/IJSE GDSE72/AD2 B72/AGMS-System/config-repo/"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
