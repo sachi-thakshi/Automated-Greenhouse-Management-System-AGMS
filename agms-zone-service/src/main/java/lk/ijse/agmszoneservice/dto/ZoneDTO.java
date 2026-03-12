@@ -12,4 +12,8 @@ public class ZoneDTO {
     private String zoneName;
     private String description;
     private Double areaSize;
+
+    private Double minTemp;
+    private Double maxTemp;
+    private String deviceId;
 }
