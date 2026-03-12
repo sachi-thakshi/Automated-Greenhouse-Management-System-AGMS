@@ -1,0 +1,5 @@
+automation:
+  cooling:
+    temp-threshold: 30.0 # Example: Turn on Fan if temp > 30
+  heating:
+    temp-threshold: 15.0 # Example: Turn on Heater if temp < 15

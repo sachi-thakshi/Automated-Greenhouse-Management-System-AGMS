@@ -14,8 +14,8 @@
         <module>agms-eureka-server</module>
         <module>agms-api-gateway</module>
         <module>agms-zone-service</module>
-<!--        <module>agms-sensor-service</module>-->
-<!--        <module>agms-automation-service</module>-->
-<!--        <module>agms-crop-service</module>-->
+        <module>agms-crop-service</module>
+        <module>agms-sensor-service</module>
+        <module>agms-automation-service</module>
     </modules>
 </project>
