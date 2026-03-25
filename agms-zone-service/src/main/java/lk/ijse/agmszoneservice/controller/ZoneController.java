@@ -3,7 +3,6 @@ package lk.ijse.agmszoneservice.controller;
 import lk.ijse.agmszoneservice.dto.ZoneDTO;
 import lk.ijse.agmszoneservice.service.ZoneService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,11 +18,9 @@ public class ZoneController {
     @PostMapping
     public ResponseEntity<ZoneDTO> createZone(
             @RequestBody ZoneDTO zoneDTO,
-            @RequestHeader("Authorization") String authHeader) {
+            @RequestHeader("Authorization") String token) {
 
-        String token = authHeader.substring(7);
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(zoneService.saveZone(zoneDTO, token));
+        return ResponseEntity.ok(zoneService.saveZone(zoneDTO, token));
     }
 
     @GetMapping("/{id}")
