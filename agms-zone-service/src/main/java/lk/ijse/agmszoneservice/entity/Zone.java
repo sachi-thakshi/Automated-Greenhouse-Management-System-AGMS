@@ -11,26 +11,16 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Builder
 public class Zone {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @JsonProperty("zoneName")
-    private String name;
-
+    private String zoneName;
     private String description;
-
-    private Double totalArea;
-
-    @JsonProperty("areaSize")
-    public Double getTotalArea() {
-        return totalArea;
-    }
-
-    @JsonProperty("areaSize")
-    public void setTotalArea(Double totalArea) {
-        this.totalArea = totalArea;
-    }
+    private Double areaSize;
+    private Double minTemp;
+    private Double maxTemp;
+    private String deviceId;
 }
