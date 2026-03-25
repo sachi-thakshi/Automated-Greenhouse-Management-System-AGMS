@@ -1,60 +1,49 @@
 package lk.ijse.agmscropservice.controller;
 
-import lk.ijse.agmscropservice.entity.Crop;
-import lk.ijse.agmscropservice.repository.CropRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lk.ijse.agmscropservice.dto.CropDTO;
+import lk.ijse.agmscropservice.service.CropService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/crops")
+@RequiredArgsConstructor
 public class CropController {
+    private final CropService cropService;
 
-    @Autowired
-    private CropRepository cropRepository;
-
-    // Save Crop
     @PostMapping
-    public Crop saveCrop(@RequestBody Crop crop){
-        return cropRepository.save(crop);
+    public ResponseEntity<CropDTO> saveCrop(@RequestBody CropDTO cropDTO) {
+        return new ResponseEntity<>(cropService.saveCrop(cropDTO), HttpStatus.CREATED);
     }
 
-    // Get All Crops
-    @GetMapping
-    public List<Crop> getAllCrops(){
-        return cropRepository.findAll();
-    }
-
-    // Get Crop by ID
     @GetMapping("/{id}")
-    public Optional<Crop> getCropById(@PathVariable String id){
-        return cropRepository.findById(id);
+    public ResponseEntity<CropDTO> getCropById(@PathVariable String id) {
+        return ResponseEntity.ok(cropService.getCropById(id));
     }
 
-    // Update Crop
+    @GetMapping
+    public ResponseEntity<List<CropDTO>> getAllCrops() {
+        return ResponseEntity.ok(cropService.getAllCrops());
+    }
+
+    @GetMapping("/zone/{zoneId}")
+    public ResponseEntity<List<CropDTO>> getCropsByZone(@PathVariable Long zoneId) {
+        return ResponseEntity.ok(cropService.getCropsByZone(zoneId));
+    }
+
     @PutMapping("/{id}")
-    public Crop updateCrop(@PathVariable String id, @RequestBody Crop crop){
-
-        Crop existingCrop = cropRepository.findById(id).orElse(null);
-
-        if(existingCrop != null){
-            existingCrop.setCropName(crop.getCropName());
-            existingCrop.setSeason(crop.getSeason());
-            existingCrop.setFieldLocation(crop.getFieldLocation());
-
-            return cropRepository.save(existingCrop);
-        }
-
-        return null;
+    public ResponseEntity<Void> updateCrop(@PathVariable String id, @RequestBody CropDTO cropDTO) {
+        cropService.updateCrop(id, cropDTO);
+        return ResponseEntity.noContent().build();
     }
 
-    // Delete Crop
     @DeleteMapping("/{id}")
-    public String deleteCrop(@PathVariable String id){
-        cropRepository.deleteById(id);
-        return "Crop Deleted Successfully";
+    public ResponseEntity<Void> deleteCrop(@PathVariable String id) {
+        cropService.deleteCrop(id);
+        return ResponseEntity.noContent().build();
     }
-
 }
