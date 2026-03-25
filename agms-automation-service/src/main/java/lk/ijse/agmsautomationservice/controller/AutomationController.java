@@ -1,34 +1,19 @@
 package lk.ijse.agmsautomationservice.controller;
 
-import lk.ijse.agmsautomationservice.dto.Telemetry;
+import lk.ijse.agmsautomationservice.dto.TelemetryDTO;
+import lk.ijse.agmsautomationservice.service.AutomationService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @RestController
-@RequestMapping("/api/automation")
+@RequestMapping("/api/v1/automation")
+@RequiredArgsConstructor
 public class AutomationController {
 
-    private final List<String> logs = new ArrayList<>();
+    private final AutomationService automationService;
 
     @PostMapping("/process")
-    public String process(@RequestBody Telemetry data){
-
-        if(data.getTemperature() > 32){
-            logs.add("TURN_FAN_ON");
-        }
-
-        if(data.getTemperature() < 18){
-            logs.add("TURN_HEATER_ON");
-        }
-
-        return "Processed";
+    public void receiveTelemetry(@RequestBody TelemetryDTO telemetryDTO) {
+        automationService.processTelemetry(telemetryDTO);
     }
-
-    @GetMapping("/logs")
-    public List<String> getLogs(){
-        return logs;
-    }
-
 }

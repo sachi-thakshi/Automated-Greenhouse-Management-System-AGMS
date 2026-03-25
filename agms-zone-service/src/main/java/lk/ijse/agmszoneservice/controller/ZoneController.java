@@ -21,6 +21,11 @@ public class ZoneController {
         return ResponseEntity.ok(zoneService.saveZone(zoneDTO));
     }
 
+    @GetMapping("/device/{deviceId}")
+    public ResponseEntity<ZoneDTO> getZoneByDeviceId(@PathVariable String deviceId) {
+        return ResponseEntity.ok(zoneService.getZoneByDeviceId(deviceId));
+    }
+
     @GetMapping
     public ResponseEntity<List<ZoneDTO>> getAllZones() {
         return ResponseEntity.ok(zoneService.getAllZones());

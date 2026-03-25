@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>lk.ijse</groupId>
-    <artifactId>config-server</artifactId>
+    <artifactId>agms-config-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>agms-config-server</name>
 
