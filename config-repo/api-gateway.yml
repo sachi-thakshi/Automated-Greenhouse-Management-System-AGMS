@@ -1,6 +1,10 @@
 spring:
   cloud:
     gateway:
+      httpclient:
+        connect-timeout: 5000
+        response-timeout: 5s
+
       routes:
         # 1. Zone Service
         - id: zone-service
