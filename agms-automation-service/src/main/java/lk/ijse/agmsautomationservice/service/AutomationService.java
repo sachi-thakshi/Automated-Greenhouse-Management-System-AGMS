@@ -1,7 +1,9 @@
 package lk.ijse.agmsautomationservice.service;
 
-import lk.ijse.agmsautomationservice.dto.TelemetryDTO;
+import lk.ijse.agmsautomationservice.dto.SensorDTO;
 
 public interface AutomationService {
-    void processTelemetry(TelemetryDTO telemetryDTO);
+    void processEnvironmentalData(SensorDTO data);
+
+    void triggerAction(Long zoneId, String device, String state, String reason);
 }
