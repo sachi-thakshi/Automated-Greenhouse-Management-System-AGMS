@@ -57,7 +57,7 @@ public class SensorTelemetryTask {
                 log.info("Successfully authenticated with External IoT. Token cached.");
             }
         } catch (Exception e) {
-            log.error("Authentication Failed: {}. Using mock fallback if fetch fails.", e.getMessage());
+            log.warn("External IoT unreachable (Timeout). System will use Mock Fallback for this cycle.");
         }
     }
 
@@ -83,7 +83,7 @@ public class SensorTelemetryTask {
             log.warn("Token expired. Clearing cache to re-authenticate next cycle.");
             this.cachedToken = null;
         } catch (Exception e) {
-            log.error("Connection Error: {}. Falling back to MOCK data.", e.getMessage());
+            log.warn("Telemetry Fetch failed: {}. Injecting Mock Data to keep Automation Service active.", e.getMessage());
             SensorDTO mockData = new SensorDTO(28.5, 72.0, 1L, LocalDateTime.now());
             processAndPush(mockData);
         }

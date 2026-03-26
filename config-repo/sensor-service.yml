@@ -19,4 +19,4 @@ http:
 logging:
   level:
     lk.ijse.agmssensorservice.service.SensorTelemetryTask: DEBUG
-    org.springframework.web.client.RestTemplate: INFO
+    org.springframework.web.client.RestTemplate: WARN
