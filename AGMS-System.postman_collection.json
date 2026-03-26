@@ -1,0 +1,472 @@
+{
+  "info": {
+    "_postman_id": "feecfc14-9ed0-474a-8c8b-cb60c51ec3b5",
+    "name": "AGMS-System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44945363"
+  },
+  "item": [
+    {
+      "name": "Zone",
+      "item": [
+        {
+          "name": "ZONE-POST",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGFrc2hpbGFAZXhhbXBsZS5jb20iLCJyb2xlIjoiTUFOQUdFUiIsImlhdCI6MTc3NDQ1MDk0OCwiZXhwIjoxNzc0NTM3MzQ4fQ.jI5oGJmnORxP4zNd0YNyCLoMPxzMQ9mU9GUu06Oxm2w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// {\r\n//     \"zoneName\": \"Greenhouse Alpha 2\",\r\n//     \"description\": \"Main potato plantation\",\r\n//     \"areaSize\": 1200.50,\r\n//     \"minTemp\": 20.0,\r\n//     \"maxTemp\": 30.0\r\n// }\r\n\r\n// {\r\n//     \"zoneName\": \"Hydroponics Beta\",\r\n//     \"description\": \"Leafy greens cultivation zone\",\r\n//     \"areaSize\": 850.75,\r\n//     \"minTemp\": 18.5,\r\n//     \"maxTemp\": 26.0\r\n// }\r\n\r\n// {\r\n//     \"zoneName\": \"Aquaponics Alpha\",\r\n//     \"description\": \"Fish-integrated herb cultivation zone\",\r\n//     \"areaSize\": 620.40,\r\n//     \"minTemp\": 20.0,\r\n//     \"maxTemp\": 24.5\r\n// }\r\n\r\n{\r\n    \"zoneName\": \"Hydroponics Beta\",\r\n    \"description\": \"Leafy greens vertical farming zone\",\r\n    \"areaSize\": 450.75,\r\n    \"minTemp\": 18.0,\r\n    \"maxTemp\": 22.0\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/zones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "zones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ZONE-GET",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGFrc2hpbGFAZXhhbXBsZS5jb20iLCJyb2xlIjoiTUFOQUdFUiIsImlhdCI6MTc3MzMzMTY5NSwiZXhwIjoxNzczNDE4MDk1fQ.ZJH9T_bHZQ_o4kpkFE9nIyx5Ib_bMm9I5APL54TE7Ln2eLXGqBB6lBB68nOnvqVxWbJCaA9odIzloKBDzl85Fw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/zones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "zones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ZONE-PUT",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGFrc2hpbGFAZXhhbXBsZS5jb20iLCJyb2xlIjoiTUFOQUdFUiIsImlhdCI6MTc3MzMzMTY5NSwiZXhwIjoxNzczNDE4MDk1fQ.ZJH9T_bHZQ_o4kpkFE9nIyx5Ib_bMm9I5APL54TE7Ln2eLXGqBB6lBB68nOnvqVxWbJCaA9odIzloKBDzl85Fw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"zoneName\": \"Greenhouse 2\",\r\n        \"description\": \"Main potato cultivation zone\",\r\n        \"areaSize\": 1200.5,\r\n        \"minTemp\": 20.0,\r\n        \"maxTemp\": 30.0,\r\n        \"deviceId\": \"DUMMY-1773331837897\"\r\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/zones/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "zones",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ZONE-DELETE",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGFrc2hpbGFAZXhhbXBsZS5jb20iLCJyb2xlIjoiTUFOQUdFUiIsImlhdCI6MTc3MzMzMTY5NSwiZXhwIjoxNzczNDE4MDk1fQ.ZJH9T_bHZQ_o4kpkFE9nIyx5Ib_bMm9I5APL54TE7Ln2eLXGqBB6lBB68nOnvqVxWbJCaA9odIzloKBDzl85Fw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/zones/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "zones",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ZONE-GET-ONE",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0aGFrc2hpbGFAZXhhbXBsZS5jb20iLCJyb2xlIjoiTUFOQUdFUiIsImlhdCI6MTc3MzMzMTY5NSwiZXhwIjoxNzczNDE4MDk1fQ.ZJH9T_bHZQ_o4kpkFE9nIyx5Ib_bMm9I5APL54TE7Ln2eLXGqBB6lBB68nOnvqVxWbJCaA9odIzloKBDzl85Fw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/zones/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "zones",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "crops",
+      "item": [
+        {
+          "name": "CROP-POST",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "cropData",
+                  "value": "{\n    \"commonName\": \"Coconut\",\n    \"scientificName\": \"Cocos nucifera\",\n    \"category\": \"Palm\",\n    \"season\": \"All Year\",\n    \"zoneId\": 2\n}",
+                  "type": "text",
+                  "uuid": "c9058157-c5fa-4251-b684-7b43359fb18a"
+                },
+                {
+                  "key": "imageFile",
+                  "type": "file",
+                  "uuid": "f2681d45-70f2-4789-99ab-bbc19e4e45e5",
+                  "src": "/C:/Users/LENOVO/Downloads/coconut-garden.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/crops",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "crops"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CROP-GET",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/crops",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "crops"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CROP-GET-ONE",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/crops/bc21406e-86af-4049-abb3-951b2fd24f92",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "crops",
+                "bc21406e-86af-4049-abb3-951b2fd24f92"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CROP-PUT",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "cropData",
+                  "value": "{\n    \"commonName\": \"Coconut - Updated\",\n    \"scientificName\": \"Cocos nucifera\",\n    \"category\": \"Palm\",\n    \"season\": \"All Year\",\n    \"zoneId\": 2\n}",
+                  "type": "text",
+                  "uuid": "89771fd5-4621-4401-8403-8daba48a0c10"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/crops/868c71f3-c471-418f-a1c5-77c48e513491",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "crops",
+                "868c71f3-c471-418f-a1c5-77c48e513491"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CROP-DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/crops/b071e9af-cf33-4770-a0dc-645c16c8819c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "crops",
+                "b071e9af-cf33-4770-a0dc-645c16c8819c"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "REGISTER",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// {\r\n//   \"email\": \"sachini@example.com\",\r\n//   \"password\": \"1234\",\r\n//   \"role\": \"FARMER\"\r\n// }\r\n\r\n{\r\n  \"email\": \"thakshila@example.com\",\r\n  \"password\": \"1234\",\r\n  \"role\": \"MANAGER\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8085/api/v1/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "LOGIN",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"thakshila@example.com\",\r\n  \"password\": \"1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "sensor",
+      "item": [
+        {
+          "name": "GET-SENSORS",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aGFrc2hpbGFAZXhhbXBsZS5jb20iLCJyb2xlIjoiTUFOQUdFUiIsImlhdCI6MTc3NDUxNTMyNiwiZXhwIjoxNzc0NjAxNzI2fQ.kd5sFjDTpIA0MIKuR7E9xeIByPCx6YwEp5j6jEL0fIY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/sensors/latest",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "sensors",
+                "latest"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "IOT-LOGIN",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"username\",\r\n    \"password\":\"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://104.211.95.241:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "104",
+            "211",
+            "95",
+            "241"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
