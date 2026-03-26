@@ -1,8 +1,9 @@
 package lk.ijse.agmsautomationservice.controller;
 
-import lk.ijse.agmsautomationservice.dto.TelemetryDTO;
+import lk.ijse.agmsautomationservice.dto.SensorDTO;
 import lk.ijse.agmsautomationservice.service.AutomationService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,7 +14,8 @@ public class AutomationController {
     private final AutomationService automationService;
 
     @PostMapping("/process")
-    public void receiveTelemetry(@RequestBody TelemetryDTO telemetryDTO) {
-        automationService.processTelemetry(telemetryDTO);
+    public ResponseEntity<Void> receiveTelemetry(@RequestBody SensorDTO data) {
+        automationService.processEnvironmentalData(data);
+        return ResponseEntity.ok().build();
     }
 }
