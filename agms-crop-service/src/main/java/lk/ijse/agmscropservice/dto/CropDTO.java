@@ -4,15 +4,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+import java.time.LocalDate;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CropDTO {
+public class CropDTO implements Serializable {
     private String id;
+
+    private String batchId;
+
     private String cropName;
-    private String scientificName;
     private String category;
-    private String growthStatus;
-    private String cropSeason;
+
+    // State Machine (SEEDLING, VEGETATIVE, HARVESTED)
+    private String status;
+
     private Long zoneId;
+    private LocalDate plantedDate;
 }
